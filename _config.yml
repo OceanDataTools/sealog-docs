@@ -24,10 +24,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   vocabularies.
 # twitter_username: username
 github_username: oceandatatools
-domain: oceandatatools.github.icon
-baseurl: /sealog_docs/
 minimal_mistakes_skin: default
 search: true
+
+# GitHub Pages integration
+domain: oceandatatools.github.icon
+baseurl: /sealog_docs/
 
 # Build settings
 markdown: kramdown
