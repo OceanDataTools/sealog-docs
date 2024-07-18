@@ -13,14 +13,19 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Sealog Documentation
+email: info@oceandatatools.org
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+  Sealog is a general purpose event logging framework built to support research
+  vessels and deployed underwater vehicles. It provides vessel/vehicle
+  operators with an event-logging solution that can be customized to support
+  the operator’s unique needs and provide a science party with a tool that
+  allows them to design and enforce standardized documenting procedures and
+  vocabularies.
+# twitter_username: username
+github_username: oceandatatools
+domain: oceandatatools.github.icon
+baseurl: /sealog_docs/
 minimal_mistakes_skin: default
 search: true
 
@@ -35,6 +40,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+  - _docs
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -47,6 +53,8 @@ include:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+exclude:
+  - _docs/wip-*
 
 # Plugins (previously gems:)
 plugins:
@@ -56,60 +64,96 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-toc
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+#  name   : "First Lastname"
+#  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "Sealog is a general purpose event logging framework built to
+    support research vessels and deployed underwater vehicles."
+  # links:
+  #   - label: "Website"
+  #     icon: "fas fa-fw fa-link"
+  #     url: "https://www.oceandatatools.org"
+  #   - label: "GitHub"
+  #     icon: "fab fa-fw fa-github"
+  #     url: "https://github.com/OceanDataTools/sealog-server"
+
+atom_feed:
+  hide: true
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
+    - label: "Website"
+      icon: "fas fa-globe"
+      url: "https://www.oceandatatools.org"
+    - label: "GitHub Repositories"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/orgs/OceanDataTools/repositories?q=sealog"
+    - label: "MIT Open Source License"
+      icon: "fas fa-file-alt"
+      url: "https://opensource.org/license/mit"
 
 defaults:
   # _posts
+  # - scope:
+  #     path: ""
+  #     type: posts
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     read_time: true
+  #     comments: true
+  #     share: true
+  #     related: true
+
+  # _docs
   - scope:
       path: ""
-      type: posts
+      type: docs
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
+      sidebar:
+        nav: "navdocs"
+
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
-      layout: single
+      layout: home
       author_profile: true
+      sidebar:
+        nav: "navdocs"
 
+  # _pages
+  # - scope:
+  #     path: "_pages"
+  #     type: pages
+  #   values:
+  #     layout: single
+  #     author_profile: true
+
+#toc:
+#  min_level: 1
+#  max_level: 6
+#  no_toc_section_class: "no_toc_section"
+#  list_class: "toc-list"
+#  sublist_class: "toc-sublist"
+#  item_class: "toc-list-item"
+
+toc: true
+toc_label: "Table of Contents"
+toc_icon: "cog"  # Choose an icon from FontAwesome (optional)
+toc_levels: "1..4"  # Define which heading levels to include in the TOC
+
+############################
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
+
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name

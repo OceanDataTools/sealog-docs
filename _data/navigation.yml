@@ -1,9 +1,72 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
   - title: "About"
     url: /about/
+  # - title: "Server"
+  #   url: /server/
+  # - title: "Client"
+  #   url: /client/
+
+navdocs:
+  - title: Getting Started
+    children:
+      - title: "Core Concepts"
+        url: /core_concepts/
+      - title: "Event Logging"
+        url: /event_logging/
+      - title: "UI Quick Start"
+        url: /ui_quickstart/
+      - title: "Using the API"
+        url: /server_using_api/
+
+  - title: Server Topics
+    children:
+      - title: "Server Installation"
+        url: /server_install/
+      # - title: "Advanced Setup"
+      #   url: /server_advanced_setup/
+      - title: "Enabling Python Services"
+        url: /server_python_services/
+      - title: "ASNAP Service"
+        url: /server_asnap_setup/
+      - title: "Auto-Actions Service"
+        url: /server_auto_action_setup/
+      - title: "InfluxDB Integration"
+        url: /server_influxdb_setup/
+      - title: "Data Export"
+        url: /server_data_export/
+      - title: "Advanced User Permissions"
+        url: /server_advanced_permissions/
+      - title: "Containerized Deployment"
+        url: /server_containers/
+
+  - title: Client Topics
+    children:
+      - title: "Client Installation"
+        url: /client_install/
+      - title: "Advanced Setup"
+        url: /client_advanced_setup/
+      - title: "Client Tour"
+        url: /client_tour/
+      - title: "Event Template Best Practices"
+        url: /event_template_best_practices/
+      # - title: "Multiple Instances"
+      #   url: /client_multiple_instances/
+      - title: "Containerized Deployment"
+        url: /client_containers/
+      - title: "Developing a Custom Client"
+        url: /client_custom/
+
+  - title: "Links"
+    children:
+      - title: "Ocean Data Tools Home"
+        icon: "fas fa-fw fa-link"
+        url: "https://www.oceandatatools.org"
+      - title: "GitHub Repository (Server)"
+        icon: "fab fa-fw fa-github"
+        url: "https://github.com/OceanDataTools/sealog-server"
+      - title: "GitHub Repository (Client Vessel)"
+        icon: "fab fa-fw fa-github"
+        url: "https://github.com/OceanDataTools/sealog-client-vessel"
+      - title: "GitHub Repository (Client Vehicle)"
+        icon: "fab fa-fw fa-github"
+        url: "https://github.com/OceanDataTools/sealog-client-vehicle"

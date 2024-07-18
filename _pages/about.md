@@ -1,8 +1,39 @@
 ---
 permalink: /about/
 title: "About"
+layout: single
+toc: false
+toc_label: "Contents"
+toc_icon: "list"
+toc_sticky: true  # Makes the TOC stick on scroll
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Sealog is a general purpose event logging framework built to support research vessels and deployed underwater vehicles.
+It provides vessel/vehicle operators with an event-logging solution that can be customized to support the operator’s unique needs and provide a science party with a tool that allows them to design and enforce standardized documenting procedures and vocabularies. 
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+## Architecture
+
+Sealog uses a traditional server/client architecture with the server's functionality remaining small and concise.  The sealog-server just an API that clients, scripts and application leverage to submit and retrieve event data.  Data can be submitted/retrieved via RESTful API calls or accessed asynchronously via websockets pub/sub channels.
+
+## Short-list of features
+
+ - 100% of functionality accessable via RESTful API, completely indenpendent of any graphical/CLI front-end.
+ - Ad-hoc association of ancilary data with events such as sensor data, navigation, etc. 
+ - Ability to filter events based on user, value, keywords and time spans
+ - Ability to subscribe to the live eventlog feed (using websockets).
+ - Simple exporting of all or a filtered list of events merged with ancilary data is JSON or CSV format
+ - Defining event templates for quick event submission
+ - role-based authentication using Java Web Tokens (JWT)
+
+## Software Requirements
+
+The Sealog server and clients have been tested against Ubuntu 20.04/22.04/24.04 and RHEL 9.  The clients are based on the React NodeJS framework and are compatible with most modern browsers.
+
+The project code repositories are at:
+ - [Sealog Server](https://github.com/oceandatatools/sealog-server)
+ - [Sealog client (for vessels)](https://github.com/oceandatatools/sealog-client-vessel)
+ - [Sealog client (for vehicles)](https://github.com/oceandatatools/sealog-client-vehicle)
+
+The server and clients are made available under the [MIT Open Source License](https://opensource.org/license/mit).
+
+Sealog is a part of the [Ocean Data Tools project](http://oceandata.tools).
