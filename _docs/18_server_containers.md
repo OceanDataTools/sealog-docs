@@ -43,6 +43,7 @@ services:
       - "8000:8000"
     restart: unless-stopped
     volumes:
+      # Make sure this directory exists
       - /data/sealog-files:/data/sealog-files
 
   mongo:
