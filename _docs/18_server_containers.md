@@ -43,7 +43,7 @@ services:
       - "8000:8000"
     restart: unless-stopped
     volumes:
-      - sealog-files:/data/sealog-files
+      - /data/sealog-files:/data/sealog-files
 
   mongo:
     image: mongo
@@ -55,7 +55,6 @@ services:
 
 volumes:
   db_data:
-  sealog-files:
 ```
 
 #### Dockerfile
