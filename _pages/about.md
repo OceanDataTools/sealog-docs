@@ -36,4 +36,4 @@ The project code repositories are at:
 
 The server and clients are made available under the [MIT Open Source License](https://opensource.org/license/mit).
 
-Sealog is a part of the [Ocean Data Tools project](http://oceandata.tools).
+Sealog is a part of [OceanDataTools.org](https://www.oceandatatools.org).
