@@ -89,7 +89,7 @@ This object is setup to build the following aux_data record:
 ```
     {
         "event_id": "<event_id>",
-        "data_source": "vesselRealtimePosition",
+        "data_source": "realtimeVesselPosition",
         "data_array":
         [
             {
@@ -120,7 +120,7 @@ Additional definitions can be to this YAML string to have the service insert mul
 If a data point needs to be modified consistently (no test required) then the `test` portion of the `modify` sub-object can be omitted. An example of this would be to flip the sign of a GGA altitude from a USBL source so that the depth can be shown as a positive number.
 ```
   aux_record_lookup:
-    GGAAltitude:
+    USBL_GGA_Altitude:
       name: depth
       uom: m
       round: 2
