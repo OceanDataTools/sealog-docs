@@ -37,7 +37,7 @@ The Sealog Server API URL is the network address and port the Sealog Server list
 
 Typically the client and server are served on the same host so the IP/URL will be the same with only the port number being different. For deployments where there is only one instance of Sealog running the default port number for the Sealog API is 8000.  For installations where there is more than one Sealog instance the port numbers typically increment by 100 (8100, 8200, etc).
 
-The port number for every Sealog Server instance is specified within the `<server_install_dir>/config/manifest.js` file.
+The port number for a Sealog Server instance is specified within the `<server_install_dir>/config/manifest.js` file.
 
 The full Server API URL is `http://<IP/URL>:<port number>/sealog-server`
 
