@@ -55,6 +55,8 @@ navdocs:
         url: /client_containers/
       - title: "Developing a Custom Client"
         url: /client_custom/
+      - title: "Submit Events via Streamdeck"
+        url: /client_streamdeck/
 
   - title: "Links"
     children:

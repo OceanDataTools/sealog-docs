@@ -12,7 +12,7 @@ Sealog Server and the Sealog clients are completely separated code bases. This w
 
 There are 3 main ways to proceed when developing a custom client:
 1. Go your own way, start from scratch, build the hardware/software Sealog interface of your dreams!
-2. Build a physical interface using COTS hardware such as a [Elgato StreamDeck](https://www.elgato.com/us/en/p/stream-deck-mk2-black) (yes, this has actually been done)
+2. Build a physical interface using COTS hardware such as a [Elgato StreamDeck](https://www.elgato.com/us/en/p/stream-deck-mk2-black) (yes, this has actually been done) [Here's how.]({{ "/client_streamdeck/" | relative_url }}))
 3. Fork an existing client repository and modify it to meet a vessel/vehicle's unique needs (Pretty easy and often done).
 
 For groups that opt for the thrid option, just be aware that the forked client must adhere to the stipulations of the [MIT Open Source License](https://opensource.org/license/mit).
