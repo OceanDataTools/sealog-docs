@@ -32,6 +32,8 @@ navdocs:
         url: /server_auto_action_setup/
       - title: "InfluxDB Integration"
         url: /server_influxdb_setup/
+      - title: "CORIOLIX Integration"
+        url: /server_coriolix_setup/
       - title: "Data Export"
         url: /server_data_export/
       - title: "Advanced User Permissions"

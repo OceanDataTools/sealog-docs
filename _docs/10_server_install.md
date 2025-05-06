@@ -104,7 +104,7 @@ By default email integration is disabled. To setup email integration:
 By default the Sealog-Server API is hosted on port 8000.  Modify the `port` variable in the `./config/manifest.js` file.
 
 #### Setup a custom locations for event imagery and uploaded files.
-By default imagery and uploaded files will be stored at `/opt/sealog-server/sealog-files`.  Change this by updating the `FILEPATH_ROOT` variable in the `./config/server_settings.js`.  If this path does not exist the server will try to create it.  If it cannot the server will throw an error and exit.
+By default imagery and uploaded files will be stored at `/opt/sealog-server/sealog-files`.  Change this by updating the `FILEPATH_ROOT` variable in the `./config/server_settings.js`.  If this path does not exist the server will try to create it.  If it cannot the server will throw an error and exit.  If it throws an error make sure the sealog user has permission to create directories within `FILEPATH_ROOT`
 
 #### Enable ReCaptcha bot Protection.
 Update the `reCaptchaSecret` variable in the `./config/server_settings.js` file to enable server-side ReCaptcha integration.  This requires configuring the client to use also ReCaptcha. 
