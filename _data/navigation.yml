@@ -51,8 +51,8 @@ navdocs:
         url: /client_tour/
       - title: "Event Template Best Practices"
         url: /event_template_best_practices/
-      # - title: "Multiple Instances"
-      #   url: /client_multiple_instances/
+      - title: "Multiple Instances"
+        url: /client_multiple_instances/
       - title: "Containerized Deployment"
         url: /client_containers/
       - title: "Developing a Custom Client"
