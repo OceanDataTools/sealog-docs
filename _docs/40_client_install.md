@@ -98,17 +98,17 @@ sudo pico /etc/nginx/sites-available/sealog.conf
 Added the following to the configuration file:
 ```
 server {
-       listen 80;
-       listen [::]:80;
+    listen 80;
+    listen [::]:80;
 
-       server_name _;
+    server_name _;
 
-       root /opt/sealog-client/dist;
-       index index.html;
+    root /opt/sealog-client/dist;
+    index index.html;
 
-       location / {
-               try_files $uri $uri/ =404;
-       }
+    location / {
+        try_files $uri $uri/ =404;
+    }
 }
 ```
 

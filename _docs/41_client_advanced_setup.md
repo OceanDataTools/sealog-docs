@@ -30,6 +30,11 @@ Use the `MAIN_SCREEN_HEADER` variable in the `./src/client_settings.js` to speci
 
 Use the `MAIN_SCREEN_TXT` variable in the `./src/client_settings.js` to specify the text displayed on the Cruise Review page.
 
+#### Read-only client and advanced user permissions
+Use the `USE_ACCESS_CONTROL` variable in the `./src/client_settings.js` to enable per-user/pre-cruise/lowering permissions. Enabling this option will allow admins to define exaclt what cruises/lowerings that users can access.  This requres setting the corresponding option on the server.  It's set to `false` by default.
+
+Use the `DISABLE_EVENT_LOGGING` variable in the `./src/client_settings.js` to disable the client's event-logging functionality. This is commonly used when serving a shore-side copy of Sealog for post-cruise viewing. It's set to `false` by default.
+
 #### Set the defaults for creating new cruise and lowering records
 The `DEFAULT_VESSEL` variable in `./src/client_settings` will be the default "Vessel" value when adding new cruise records
 

@@ -1,6 +1,6 @@
 ---
-permalink: /server_influxdb_setup/
-title: "InfluxDB Integration"
+permalink: /server_coriolix_setup/
+title: "CORIOLIX Integration"
 layout: single
 toc: true
 toc_label: "Contents"
@@ -8,24 +8,24 @@ toc_icon: "list"
 toc_sticky: true  # Makes the TOC stick on scroll
 ---
 
-### Aux Data Inserter for InfluxDB
+### Aux Data Inserter for CORIOLIX
 
-Aux-Data-Inserter-Influx is a service that associates ancillary data queried from InfluxDB with events. Examples of ancilary data include vessel/vehicle position and sensor data.
+Aux-Data-Inserter-CORIOLIX is a service that associates ancillary data queried from CORIOLIX with events. Examples of ancilary data include vessel/vehicle position and sensor data.
 
-An internal yaml-formated string or optional externally supplied yaml-formatted file defines what data to query from InfluxDB and how to format the resulting aux_data records submitted to the Sealog Server API.
+An internal yaml-formated string or optional externally supplied yaml-formatted file defines what data to query from CORIOLIX and how to format the resulting aux_data records submitted to the Sealog Server API.
 
-#### sealog_aux_data_inserter_influx.py
-The service is contained within the `sealog_aux_data_inserter_influx.py` script. Before use, the [Python service prerequisites]({{ "/server_python_services/" | relative_url }}) and [InfluxDB service prerequisites](#setup-influxdb-integration) must be met and the `sealog_aux_data_inserter_influx.py` script must be copied from the distributed version.
+#### sealog_aux_data_inserter_coriolix.py
+The service is contained within the `sealog_aux_data_inserter_coriolix.py` script. Before use, the [Python service prerequisites]({{ "/server_python_services/" | relative_url }}) and [CORIOLIX service prerequisites](#setup-coriolix-integration) must be met and the `sealog_aux_data_inserter_coriolix.py` script must be copied from the distributed version.
 ```
 cd /opt/sealog-server
-cp ./misc/sealog_aux_data_inserter_influx.py.dist ./misc/sealog_aux_data_inserter_influx.py
+cp ./misc/sealog_aux_data_inserter_coriolix.py.dist ./misc/sealog_aux_data_inserter_coriolix.py
 ```
 
 #### Usage
 ```
-usage: sealog_aux_data_inserter_influx.py [-h] [-v] [-f CONFIG_FILE] [-n] [-e EVENTS] [-c CRUISE_ID] [-l LOWERING_ID]
+usage: sealog_aux_data_inserter_coriolix.py [-h] [-v] [-f CONFIG_FILE] [-n] [-e EVENTS] [-c CRUISE_ID] [-l LOWERING_ID]
 
-Aux Data Inserter Service - InfluxDB
+Aux Data Inserter Service - CORIOLIX
 
 options:
   -h, --help            show this help message and exit
@@ -34,7 +34,7 @@ options:
                         use the specifed configuration file
   -n, --dry_run         compile the aux_data records but do not submit to server API
   -e EVENTS, --events EVENTS
-                        list of event_ids to apply the influx data
+                        list of event_ids to apply the coriolix data
   -c CRUISE_ID, --cruise_id CRUISE_ID
                         cruise_id to fix aux_data for
   -l LOWERING_ID, --lowering_id LOWERING_ID
@@ -218,24 +218,22 @@ sudo pico /etc/supervisor/conf.d/sealog-server.conf
 
 Append the following to the supervisor configuration file (assumes the desired user is `sealog`):
 ```
-[program:sealog-aux-data-inserter-influx]
+[program:sealog-aux-data-inserter-coriolix]
 directory=/opt/sealog-server/misc
-command=/opt/sealog-server/venv/bin/python sealog_aux_data_inserter_influx.py -f ./embed_config.yaml
+command=/opt/sealog-server/venv/bin/python sealog_aux_data_inserter_coriolix.py -f ./embed_config.yaml
 redirect_stderr=true
-stdout_logfile=/var/log/sealog-aux-data-inserter-influx_STDOUT.log
+stdout_logfile=/var/log/sealog-aux-data-inserter-coriolix_STDOUT.log
 user=sealog
 autostart=true
 autorestart=true
 stopsignal=QUIT
 ```
 
-### Setup InfluxDB Integration
-Sealog Server comes with a InfluxDB wrapper for communicating with InfluxDB. The wrapper requires a valid server address, organization, bucket name and token.  This information must be saved in the `./misc/influx_sealog/settings.py` file.  If this file does not already exist, create it from the distributed version
+### Setup CORIOLIX Integration
+Sealog Server comes with a CORIOLIX wrapper for communicating with CORIOLIX. The wrapper requires a valid server address.  This information must be saved in the `./misc/coriolix_sealog/settings.py` file.  If this file does not already exist, create it from the distributed version
 ```
 cd /opt/sealog-server
-cp ./misc/influx_sealog/settings.py.dist ./misc/influx_sealog/settings.py
+cp ./misc/coriolix_sealog/settings.py.dist ./misc/coriolix_sealog/settings.py
 ```
 
-Refer to InfluxDB documentation on creating and retrieving this information.
-
-If the vessel/vehicle uses OpenRVDAS to push data to InfluxDB then this information can be copy/pasted from `/<install_root>/openrvdas/database/influxdb/settings.py`
+Refer to CORIOLIX documentation for retrieving the vessel's server URL.
