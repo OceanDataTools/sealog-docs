@@ -67,7 +67,7 @@ To review the events from a lowering, click the “Review Cruises” link from t
 Use the interface to select the desired year, cruise and lowering. The interface will display the information stored within the selected cruise and lowering records.
 
 #### Cruise/Lowering Review Modes
-Once the desired cruise/lowering is selected, the UI will present three options for reviewing the cruise/lowering.
+Once the desired cruise/lowering is selected, the UI will present a three options for reviewing the cruise/lowering. Click the 'Review' dropdown in the Cruise/Lowering card to see the available options.
 - Replay → VLC-style controls and a slider for scanning through a cruise/lowering. All associated data for a given event is displayed including previews of image data (sealog-vehicle only).
 - Map → Similar to Replay and Review but with a focus on the position where the event was created. This interface includes a map of the lowering trackline and a slider for quickly scanning through the lowering.
 - Gallery (sealog-vehicle only) → Displays only the image data collected for each event, organized by camera name.
@@ -103,6 +103,8 @@ The Cruise and Lowering sections are organize in a similar manner. Each section 
 The cruise/lowering table displays all cruises/lowerings available in Sealog. The search text field at the header of the cruise/lowering table is for filtering the list. The download icon next to the search text field can be used to export all the cruises in the table to file (json-formatted).
 
 To edit an existing cruise/lowering click the pencil icon next to the desired cruise/lowering.
+
+To run the export process against a specific cruise/lowering, click the download icon next to the desired cruise/lowering.
 
 To delete an existing cruise/lowering click the trash can icon next to the desired cruise/lowering. The client will prompt the user to confirm the action before completing the deletion.
 
@@ -145,6 +147,7 @@ Non-system event templates can be created by template manager or admin users. Th
 
 ##### Adding/Editing Event Templates
 When first arriving to the Event Templates page the event template form is ready to immediately start building a new event template.
+
 Click the test-tube icon to preview what a template will look like on the main event-logging page.
 
 Click the trash can icon to delete an event template. A confirmation dialog will appear before performing the template is deleted.

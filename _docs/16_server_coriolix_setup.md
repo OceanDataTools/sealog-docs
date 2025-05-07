@@ -124,7 +124,7 @@ This object is setup to build the following aux_data record:
 [
     {
         "event_id": "<event_id>",
-        "data_source": "realtimeVesselPosition",
+        "data_source": "vesselPosition",
         "data_array":
         [
             {
